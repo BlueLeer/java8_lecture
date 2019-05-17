@@ -6,7 +6,7 @@ package com.lee.part0_lambda;
  * Date : 2019/4/19
  * Description :
  */
-public class Student {
+public class Student implements Comparable{
     // 姓名
     private String name;
     // 身高
@@ -34,5 +34,10 @@ public class Student {
 
     public void setWeight(Double weight) {
         this.weight = weight;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        return 0;
     }
 }

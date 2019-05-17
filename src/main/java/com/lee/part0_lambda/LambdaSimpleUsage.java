@@ -1,8 +1,6 @@
 package com.lee.part0_lambda;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created with : IntelliJ IDEA
@@ -29,13 +27,19 @@ public class LambdaSimpleUsage {
         };
 
         students.sort(studentComparator);
+
+        System.out.println(students);
         //****************************************************************
         // 使用lambda表达式来完成
-        Comparator<Student> studentComparator2 = (o1, o2) -> o1.getWeight().compareTo(o2.getWeight());
+        Comparator<Student> studentComparator2 = ((Student o1, Student o2) -> {return 1;});
         students.sort(studentComparator2);
 
 
+        students.sort((Student s1,Student s2) -> s1.getWeight().compareTo(s2.getWeight()));
+
+
         //****************************************************************
+
 
     }
 }

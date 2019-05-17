@@ -1,10 +1,14 @@
 package com.lee.part3_date_api;
 
+import com.lee.part0_lambda.Apple;
 import sun.util.resources.LocaleData;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
 
 /**
  * @author WangLe
@@ -13,8 +17,18 @@ import java.time.format.DateTimeFormatter;
  */
 public class NewDateApi {
     public static void main(String[] args) {
-        test1();
-        test2();
+//        test1();
+//        test2();
+
+        Thread thread = new Thread(() -> {
+        });
+
+
+        thread.start();
+
+        List<Apple> list = Arrays.asList(new Apple());
+//        list.sort(Comparator.comparing());
+
     }
 
     private static void test1() {
