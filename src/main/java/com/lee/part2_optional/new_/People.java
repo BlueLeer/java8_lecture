@@ -9,14 +9,19 @@ import java.util.Optional;
  */
 public class People {
     private String name;
-    private Optional<Car> car;
+    private Car car;
+
+    private Optional<Integer> age;
 
     public People() {
     }
 
-    public People(String name, Optional<Car> car) {
-        this.name = name;
-        this.car = car;
+    public Optional<Integer> getAge() {
+        return age;
+    }
+
+    public void setAge(Optional<Integer> age) {
+        this.age = age;
     }
 
     public String getName() {
@@ -27,11 +32,11 @@ public class People {
         this.name = name;
     }
 
-    public Optional<Car> getCar() {
+    public Car getCar() {
         return car;
     }
 
-    public void setCar(Optional<Car> car) {
+    public void setCar(Car car) {
         this.car = car;
     }
 }

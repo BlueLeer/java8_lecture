@@ -15,6 +15,5 @@ public class SupplierUsage {
         // 提供一些一样的苹果
         Supplier<Apple> appleSupplier = () -> new Apple("red", 200D, 3.45D);
 
-
     }
 }

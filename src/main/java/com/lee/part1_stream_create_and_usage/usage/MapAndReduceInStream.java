@@ -2,6 +2,7 @@ package com.lee.part1_stream_create_and_usage.usage;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.BinaryOperator;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 

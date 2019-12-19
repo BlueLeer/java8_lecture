@@ -20,11 +20,6 @@ public class NewDateApi {
 //        test1();
 //        test2();
 
-        Thread thread = new Thread(() -> {
-        });
-
-
-        thread.start();
 
         List<Apple> list = Arrays.asList(new Apple());
 //        list.sort(Comparator.comparing());
@@ -33,9 +28,7 @@ public class NewDateApi {
 
     private static void test1() {
         LocalDate localDate = LocalDate.now();
-        String format = localDate.format(DateTimeFormatter.ofPattern("yyyy/MM/dd"));
         System.out.println(localDate);
-        System.out.println(format);
     }
 
     private static void test2() {

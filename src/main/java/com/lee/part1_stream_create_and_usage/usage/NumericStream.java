@@ -22,7 +22,7 @@ public class NumericStream {
         Stream<Integer> intStream = Arrays.stream(array);
         // 将对象类型的Integer的Stream转化为IntStream类型的Stream
         IntStream intStream1 = intStream.mapToInt(i -> i.intValue());
-        // 求和
+        // 偶数求和
         int sum = intStream1.filter(i -> i % 2 == 0).sum();
         System.out.println(sum);
         System.out.println("========================================");

@@ -23,6 +23,10 @@ public class FlatMapUsage {
                     .map(line -> line.split(""))
                     .flatMap(strings -> Arrays.stream(strings))
                     .count();
+
+            // 关于 flatMap方法的逻辑可以看下面这两行代码
+            // Stream<String[]> a = lines.map(line -> line.split("a"));
+            // Stream<String> stringStream = a.flatMap(strings -> Arrays.stream(strings));
             System.out.println(count);
         }
     }

@@ -14,13 +14,28 @@ public class Main {
         System.out.println(getInsuranceName(people));
     }
 
+    /**
+     * 关于 Optional 的map()和flatMap()方法的区别和用法
+     *
+     * @param p
+     * @return
+     */
     private static String getInsuranceName(People p) {
-        Optional<People> people = Optional.ofNullable(p);
-        return people
-                .flatMap(People::getCar)
-                .flatMap(Car::getInsurance)
+        // map获取未被optional包装的值,并将值用optional包装起来并返回
+//        Optional<Car> car = Optional.ofNullable(p).map(People::getCar);
+        //而flatMap是为了获取被Optional包装的值,并返回
+//        Optional<Integer> optionalInteger = Optional.ofNullable(p).flatMap(People::getAge);
+
+
+        // 获取保险名称
+        String s = Optional.ofNullable(p)
+                .map(People::getCar)
+                .map(Car::getInsurance)
                 .map(Insurance::getName)
-                .orElse("未知名称");
+                .orElse("哈哈哈,不存在啦");
+//        System.out.println(s);
+
+        return s;
 
     }
 }

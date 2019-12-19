@@ -26,7 +26,7 @@ public class FunctionUsage {
         );
 
         // 获取所有的颜色
-        obtainNature(appleList, apple -> apple.getColor());
+        obtainNature(appleList, Apple::getColor);
         // 获取所有的重量
         obtainNature(appleList, apple -> apple.getWeight() + "");
         // 获取所有的价格

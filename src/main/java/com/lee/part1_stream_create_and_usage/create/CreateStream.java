@@ -1,7 +1,9 @@
 package com.lee.part1_stream_create_and_usage.create;
 
+import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -19,18 +21,20 @@ import java.util.stream.Stream;
 public class CreateStream {
     public static void main(String[] args) throws IOException {
         // 从列表中获取(常用)
-        createStreamFromCollections();
+//        createStreamFromCollections();
         // 从集合中获取
-        createStreamFromSet();
+//        createStreamFromSet();
         //从数组中获取
-        createStreamFromArrays();
+//        createStreamFromArrays();
         // 从文件中获取
-        createStreamFromFile();
+//        createStreamFromFile();
 
         // 从迭代器中创建
 //        createStreamFromIterate().forEach(System.out::println);
         // 从generator中获取
-        createStreamFromGenerator().forEach(System.out::println);
+//        createStreamFromGenerator().forEach(System.out::println);
+        testFile();
+
     }
 
     /**
@@ -43,6 +47,11 @@ public class CreateStream {
         return strings.stream();
     }
 
+    /**
+     * 通过集合获取Stream
+     *
+     * @return
+     */
     private static Stream<String> createStreamFromSet() {
         Set<String> strings = Collections.emptySet();
         strings.addAll(Arrays.asList("Hello", "Java", "8", "!"));
@@ -57,6 +66,15 @@ public class CreateStream {
     private static Stream<String> createStreamFromArrays() {
         String[] strings = {"Hello", "Java", "8", "!"};
         return Stream.of(strings);
+    }
+
+    private static void testFile() throws IOException {
+        Path path = Paths.get("D:\\lee_java\\java8\\java8\\src\\main\\java\\com\\lee\\java8\\streams\\Dish.java");
+        InputStream is = new FileInputStream(path.toFile().getPath());
+        byte[] bytes = new byte[1024];
+        is.read(bytes);
+        String s = new String(bytes);
+        System.out.println(s);
     }
 
     private static void createStreamFromFile() throws IOException {

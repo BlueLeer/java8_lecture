@@ -31,11 +31,14 @@ public class LambdaSimpleUsage {
         System.out.println(students);
         //****************************************************************
         // 使用lambda表达式来完成
-        Comparator<Student> studentComparator2 = ((Student o1, Student o2) -> {return 1;});
+        Comparator<Student> studentComparator2 = ((Student o1, Student o2) -> {
+            return 1;
+        });
+
         students.sort(studentComparator2);
 
 
-        students.sort((Student s1,Student s2) -> s1.getWeight().compareTo(s2.getWeight()));
+        students.sort((Student s1, Student s2) -> s1.getWeight().compareTo(s2.getWeight()));
 
 
         //****************************************************************

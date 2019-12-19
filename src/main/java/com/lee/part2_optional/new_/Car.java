@@ -9,14 +9,9 @@ import java.util.Optional;
  */
 public class Car {
     private String name;
-    private Optional<Insurance> insurance;
+    private Insurance insurance;
 
     public Car() {
-    }
-
-    public Car(String name, Optional<Insurance> insurance) {
-        this.name = name;
-        this.insurance = insurance;
     }
 
     public String getName() {
@@ -27,11 +22,11 @@ public class Car {
         this.name = name;
     }
 
-    public Optional<Insurance> getInsurance() {
+    public Insurance getInsurance() {
         return insurance;
     }
 
-    public void setInsurance(Optional<Insurance> insurance) {
+    public void setInsurance(Insurance insurance) {
         this.insurance = insurance;
     }
 }

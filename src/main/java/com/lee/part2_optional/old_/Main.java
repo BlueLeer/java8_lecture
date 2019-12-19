@@ -12,7 +12,7 @@ public class Main {
 
     }
 
-    // 方式一:深层质疑
+    // 方式一:深层质疑方式
     private static String getInsuranceName(People people) {
         if (null != people) {
             if (null != people.getCar()) {
@@ -29,6 +29,21 @@ public class Main {
     }
 
     // 方式二:使用多处退出语句
+    private static String getInsuranceName2(People people) {
+        if (people == null) {
+            return null;
+        }
+
+        if (people.getCar() == null) {
+            return null;
+        }
+
+        if (people.getCar().getInsurance() == null) {
+            return null;
+        }
+
+        return people.getCar().getInsurance().getName();
+    }
 
 
 }

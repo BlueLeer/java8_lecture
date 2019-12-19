@@ -3,7 +3,9 @@ package com.lee.part0_lambda;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 /**
  * Created with : IntelliJ IDEA
@@ -45,8 +47,11 @@ public class FunctionInterfaceUsage {
                 new Apple("red", 6.34D, 9.98D),
                 new Apple("yellow", 1.98D, 0.98D)
         );
-        filterApples(appleList, predicateColor, consumerApple);
-        System.out.println(appleList);
+        List<Apple> collect = appleList.stream().filter(predicateColor).collect(Collectors.toList());
+        System.out.println(collect);
+
+//        filterApples(appleList, predicateColor, consumerApple);
+//        System.out.println(appleList);
 
 
     }
