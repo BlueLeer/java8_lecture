@@ -9,7 +9,7 @@ import java.util.Optional;
  */
 public class Main {
     public static void main(String[] args) {
-        People people = new People();
+        People people = null;
 
         System.out.println(getInsuranceName(people));
     }
@@ -31,8 +31,7 @@ public class Main {
         String s = Optional.ofNullable(p)
                 .map(People::getCar)
                 .map(Car::getInsurance)
-                .map(Insurance::getName)
-                .orElse("哈哈哈,不存在啦");
+                .map(Insurance::getName).orElse(null);
 //        System.out.println(s);
 
         return s;
